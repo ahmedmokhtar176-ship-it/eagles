@@ -1,4 +1,8 @@
 import React from 'react';
+import logo from './logo.png';
+export const img = {
+  logo: logo
+};
 import {Phone,Menu,X} from 'lucide-react';
 import {useLocation,useNavigate} from 'react-router-dom';
 
@@ -9,7 +13,7 @@ export default function Header(){
   const go=p=>{setOpen(false);nav(p)};
   const links=[['/','الرئيسية'],['/services','خدماتنا'],['/about','عن الشركة'],['/contact','تواصل معنا']];
   return <header className="header"><div className="header-inner">
-    <button className="brand" onClick={()=>go('/')}><img class="logo" src="../logo.png"/></button>
+    <button className="brand" onClick={()=>go('/')}><img src={img.logo} alt="Eagles" /></button>
     <nav className={open?'nav open':'nav'}>{links.map(([p,t])=><button key={p} className={loc.pathname===p?'active':''} onClick={()=>go(p)}>{t}</button>)}</nav>
     <div className="header-actions"><a className="call-pill" href="#"><Phone size={15}/>19024</a><button className="menu" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button></div>
   </div></header>;
