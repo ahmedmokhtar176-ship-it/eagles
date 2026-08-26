@@ -1,0 +1,18 @@
+import React from "react";
+import {ArrowUpLeft,ArrowDownLeft,ShieldCheck,ChevronLeft,CarFront,Building2,Waves,Radio} from 'lucide-react';
+import {useNavigate} from 'react-router-dom';
+import {img} from '../siteData';
+import CinematicLayers from '../components/CinematicLayers';
+import HeroMeta from '../components/HeroMeta';
+import SectionLabel from '../components/SectionLabel';
+import CTA from '../components/CTA';
+
+export default function Home(){
+ const navigate=useNavigate();
+ return <>
+<section className="hero"><div className="hero-bg parallax" style={{backgroundImage:`url(${img.hero})`}}></div><div className="hero-overlay"></div><CinematicLayers/><HeroMeta/><div className="hero-content"><SectionLabel>تأمين متكامل • القاهرة & المدن الساحلية</SectionLabel><h1 className="reveal">نحرس ما<br/><span>يهمك.</span></h1><p className="hero-copy reveal">من المواقع الإدارية في قلب القاهرة إلى المنتجعات والقرى السياحية — نبني منظومة حماية تعمل بهدوء، بدقة، وعلى مدار الساعة.</p><div className="hero-actions reveal"><button className="primary magnetic" onClick={()=>navigate('/contact')}>اطلب معاينة للموقع <ArrowUpLeft/></button><button className="ghost" onClick={()=>navigate('/services')}>استكشف خدماتنا <ChevronLeft/></button></div></div><div className="hero-side reveal"><span>EST. 2012</span><span className="vertical">EAGLES / CONTROLLED SECURITY</span></div><div className="scroll-hint"><span>SCROLL TO EXPLORE</span><ArrowDownLeft/></div></section>
+<section className="stats section-pad"><div className="stats-intro"><SectionLabel>لماذا Eagles</SectionLabel><h2 className="reveal">الأمان الحقيقي لا يظهر… <span>يُشعر به.</span></h2><p className="reveal">نعمل قبل أن تصل المشكلة، ونبقى بعد أن ينتهي الحدث. منظومة تجمع العنصر البشري، التكنولوجيا، والانضباط التشغيلي.</p></div><div className="stat-cards"><div className="stat-card reveal"><strong>24/7</strong><span>غرفة عمليات</span></div><div className="stat-card reveal"><strong>120+</strong><span>فرد أمن مدرب</span></div><div className="stat-card reveal"><strong>98%</strong><span>نسبة الاحتفاظ بالعملاء</span></div><div className="stat-card reveal"><strong>45+</strong><span>موقع تحت الإدارة</span></div></div></section>
+<section className="split-feature section-pad"><div className="image-wrap reveal"><img src={img.city} alt="موقع حضري" className="parallax"/><div className="float-card"><ShieldCheck/><b>SECURITY<br/>BY DESIGN</b></div></div><div className="feature-copy"><SectionLabel>أمن يُصمم خصيصًا للموقع</SectionLabel><h2 className="reveal">من بوابة الموقع<br/><em>إلى آخر نقطة.</em></h2><p className="reveal">نبدأ بتحليل المخاطر والـflow التشغيلي للمكان، ثم نصمم توزيع الأفراد، نقاط الدخول، مسارات الدوريات، وغرفة العمليات بما يناسب طبيعة المشروع.</p><div className="feature-list"><div className="reveal"><span>01</span><div><b>تحليل المخاطر</b><small>Mapping + Threat Assessment</small></div></div><div className="reveal"><span>02</span><div><b>خطة انتشار</b><small>Posts + Patrol Routes</small></div></div><div className="reveal"><span>03</span><div><b>إدارة وتشغيل</b><small>Supervision + Reporting</small></div></div></div></div></section>
+<section className="dark-band"><div className="section-pad"><SectionLabel>قطاعات نعمل معها</SectionLabel><div className="sector-grid"><div className="sector-card reveal"><Building2/><b>Commercial</b><span>مبانٍ إدارية، مولات، مقار شركات</span></div><div className="sector-card reveal"><Waves/><b>Hospitality</b><span>قرى سياحية، فنادق، نوادٍ</span></div><div className="sector-card reveal"><CarFront/><b>Residential</b><span>كمباوندات ومجتمعات مغلقة</span></div><div className="sector-card reveal"><Radio/><b>Events</b><span>معارض، إطلاقات، فعاليات خاصة</span></div></div></div></section>
+<CTA/>
+</>}
